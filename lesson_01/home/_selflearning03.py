@@ -9,8 +9,11 @@
 
 """
 # Створіть змінну monthly_savings, рівну 10, та num_months, рівну 4
-
+monthly_savings = 10
+num_months = 4
 
 # Помножте monthly_savings на num_months і збережіть результат в змінну new_savings
+new_savings = monthly_savings * num_months
 
 # Виведіть new_savings
+print(new_savings)
