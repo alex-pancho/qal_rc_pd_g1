@@ -77,3 +77,8 @@ last_sentence = adwentures_of_tom_sawer_sentences[-1]
 words_count_last = len(last_sentence.split())
 print(words_count_last)
 """Vseravno x.. eto kto chitaet ;)"""
+"""Приходить програміст до лікаря, скаржиться на зір.
+Лікар подивився і каже:
+— М-да... У вас сильна короткозорість. Ви взагаль свіже повітря бачите? Дівчину колись торкалися?
+Програміст зітхає:
+— Лікарю, ви це зараз описуєте концепт чи робите запит на API?"""
