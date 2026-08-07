@@ -76,3 +76,4 @@ print(has_sentence)
 last_sentence = adwentures_of_tom_sawer_sentences[-1]
 words_count_last = len(last_sentence.split())
 print(words_count_last)
+"""Vseravno x.. eto kto chitaet ;)"""
