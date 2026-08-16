@@ -197,7 +197,7 @@ def check_type_vs_isinstance(value, check_type):
         tuple: (результат type(), результат isinstance())
     """
     return  type(value) == check_type, isinstance(value, check_type) # Поверніть кортеж з результатами type(value) == check_type та isinstance(value, check_type)
-print(check_type_vs_isinstance(99.0, float))
+#print(check_type_vs_isinstance(99.0, float))
 
 
 def sort_vs_sorted_demo(numbers):
@@ -217,7 +217,7 @@ def sort_vs_sorted_demo(numbers):
     original_list_numbers.sort()
     return f" Оригіналний список {numbers}. Список відсортований sort {original_list_numbers}. Список відсортований sorted  {sorted(numbers)}" # Застосуйте sort() до оригінального списку і поверніть його разом з sorted()
 
-print(sort_vs_sorted_demo([9, 5, 4, 8, 2, 12, 1]))
+#print(sort_vs_sorted_demo([9, 5, 4, 8, 2, 12, 1]))
 
 
 # =============================================================================
@@ -244,7 +244,7 @@ def filter_and_process(data, filter_func, process_func):
 data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 filter_func = lambda a: a % 2 != 0
 process_func = lambda a: a**3
-print(f" Беремо список  {data}, перевіряємо, якщо елемент непарний, підносимо його до кубу {filter_and_process(data, filter_func, process_func)}")
+#print(f" Беремо список  {data}, перевіряємо, якщо елемент непарний, підносимо його до кубу {filter_and_process(data, filter_func, process_func)}")
 
 
 def create_multiplier(factor):
@@ -262,7 +262,7 @@ def create_multiplier(factor):
     return multiplier
 
 zminna_create = create_multiplier(100)
-print(f"множимо аргумент на factor  {zminna_create(2)}")
+#print(f"множимо аргумент на factor  {zminna_create(2)}")
 
 def advanced_calculator(*args, operation="sum", **kwargs):
     """
@@ -294,7 +294,7 @@ def advanced_calculator(*args, operation="sum", **kwargs):
         return None
 args1=[1,2,3,4,5]
 operation_calc="multiply"
-print(f" Знайдемо {operation_calc} зі списку {args1}. {operation_calc} = {advanced_calculator(*args1,operation = operation_calc)}")
+#print(f" Знайдемо {operation_calc} зі списку {args1}. {operation_calc} = {advanced_calculator(*args1,operation = operation_calc)}")
   
 
 
