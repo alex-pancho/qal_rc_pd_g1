@@ -26,12 +26,13 @@ def analyze_list(numbers):
     if not numbers:
         return {'sum': 0, 'max': None, 'min': None, 'len': 0}
     return {
+        'sum': sum(numbers), 'max': max(numbers), 'min': min(numbers), 'len': len(numbers)
         # Ваш код тут
     }
-
+print(analyze_list([1,2,3,4,5]))
 # -------------------------------------------------------------------------------------
 
-# Завдання 2: Різниця між `sorted()` та `sort()`
+# Завдання 2: Різниця між `sorted()` та `sort()` (sorted() повнртає новий відсортований список, не змінює оригінальний. Sort() відсортовує і змінює оригінальний список)
 # Мета: Зрозуміти різницю між функцією `sorted()` та методом `.sort()`.
 #
 # Створіть функцію `get_sorted_list(numbers)`, яка приймає список чисел.
@@ -43,9 +44,14 @@ def analyze_list(numbers):
 # sorted_list = get_sorted_list(original_list)
 # print(sorted_list)  # повинно вивести [1, 2, 5, 8]
 # print(original_list) # повинно вивести [5, 2, 8, 1]
+original_list = [5, 2, 8, 1]
+
 def get_sorted_list(numbers):
     # Ваш код тут
-    return 
+    return sorted(numbers)
+sorted_list = get_sorted_list(original_list)
+print(f"ВІдсортований новий список {sorted_list}")
+print(f"Оригінальний список {original_list}")
 
 # -------------------------------------------------------------------------------------
 
@@ -61,7 +67,9 @@ def get_sorted_list(numbers):
 # greet("Олена", "Доброго дня") повинна повернути "Доброго дня, Олена!"
 def greet(name, greeting="Привіт"):
     # Ваш код тут
-    return 
+    return f"{greeting}, {name}!"
+print(greet("Іван"))
+print(greet("Олена", "Доброго дня"))
 # -------------------------------------------------------------------------------------
 
 # Завдання 4: Використання `*args`
@@ -78,8 +86,10 @@ def greet(name, greeting="Привіт"):
 
 def join_with_me(*args, separator=":"):
     # код  
-    return 
-
+    return separator.join(map(str, args)) # якщо без map() -> separator.join(str(x) for x in args). map() = “застосуй цю функцію до кожного елемента”.
+                                          #перетворює числа з args у рядки, бо join() працює тільки з рядками.
+print(join_with_me(1, 2, 3, separator=":" )) # 1,2,3,потрапляють у args , тобто кортеж аргументів. Всередині функції args=(1, 2, 3)
+print(join_with_me(1, 2, 3, separator="," ))
 # -------------------------------------------------------------------------------------
 
 # Завдання 5: Використання `**kwargs`
@@ -94,9 +104,28 @@ def join_with_me(*args, separator=":"):
 # Елементи потрібно розділяти через "; "
 # format_options(a=1, b=2, prefix="[", suffix="]")
 # "[ a = 1 ] ; [ b = 2 ]"
-def format_options(**kwargs):
+def format_options(**kwargs):  # kwargs - це словник {"a": 1, "b": 2, "prefix": "[", "suffix": "]" }
+    # винесемо окремо, prefix і suffix , бо вони не є вмістом, а керують тим, як виводиться вміст 
+    prefix = kwargs.pop("prefix", "value") # знаходимо ключ prefix , беремо його значення, видаляємо зі словника. Якщо такого ключа немає повернути value. Отримаємо: 1)prefix = "[" ;
+                                    #2)словник kwargs стане таким
+                                                    #  {
+                                                    #   "a": 1,
+                                                    #   "b": 2,
+                                                    #   "suffix": "]"
+                                                    #   }
+    suffix = kwargs.pop("suffix", "") # # знаходимо ключ suffix , беремо його значення, видаляємо зі словника. Якщо такого ключа немає повернути value. Отримаємо: 1)suffix = "]" ;
+                                    #2)словник kwargs стане таким
+                                                    #  {
+                                                    #   "a": 1,
+                                                    #   "b": 2
+                                                    #   }
+    formatted_items = [f"{prefix} {key}= {value} {suffix}" for key, value in kwargs.items()] #kwargs.items() дає ці пари із словника kwargs по черзі:
+                                                            #("a", 1)
+                                                            #("b", 2)
+                                                            # ["[ a = 1 ]", "[ b = 2 ]"]
     # Ваш код тут
-    return 
+    return ";".join(formatted_items) # беремо список рядків formatted_items  і склеюємо їх в один рядок через ";"
+print(format_options(a=1, b=2, prefix="[", suffix="]"))
 # -------------------------------------------------------------------------------------
 
 # Завдання 6: Комбінація позиційних та ключових аргументів
@@ -122,9 +151,19 @@ def format_options(**kwargs):
 
 def format_data(main_title, *items, **options):
     # Ваш код тут
+    separator = options.get("separator", ", ") # за замовчуванням, коли не предаємо ці значення, бере значення separator зі словника options
+    prefix= options.get("prefix", "Item") # за замовчуванням, коли не предаємо ці значення, бере значення prefix зі словника options
+    formatted_items = [f"{prefix}: {item}" for item in items] #створюємо список нових рядків. 
+                                                              #items — це список/кортеж значень. це те, що прийшло у функцію через аргумент *items.
+                                                              # for item in items — перебираємо їх по черзі.
+                                                              # f"{prefix}: {item}" — створюємо новий красивий рядок.
+    return f"{main_title}: {separator.join(formatted_items)}" # повертає один готовий рядок, який складається з
+                                                            # main_title,
+                                                            # двокрапки :,
+                                                            #усіх елементів зі списку formatted_items, з’єднаних через separator.
 
-    return 
-
+print(format_data("Products", "Apple", "Banana", separator=" | ", prefix="Fruit"))
+print(format_data("Cities", "Kyiv", "Lviv"))
 # -------------------------------------------------------------------------------------
 
 # Завдання 7: Лямбда-функції
@@ -138,8 +177,9 @@ def format_data(main_title, *items, **options):
 # is_even(2) повинно повернути True
 # is_even(3) повинно повернути False
 
-is_even = None # Ваш код тут, замініть None на лямбда-функцію
-
+is_even = lambda number: number % 2 ==0 # Ваш код тут, замініть None на лямбда-функцію
+print(is_even(2))
+print(is_even(3))
 # -------------------------------------------------------------------------------------
 
 # Завдання 8: Використання `filter` з лямбда-функцією
@@ -153,4 +193,5 @@ is_even = None # Ваш код тут, замініть None на лямбда-�
 # filter_positive_numbers([-1, 2, -3, 4, 0, 5]) повинна повернути [2, 4, 5]
 def filter_positive_numbers(numbers):
     # Ваш код тут
-    return
+    return list(filter(lambda num: num > 0, numbers))
+print(filter_positive_numbers([-1, 2, -3, 4, 0, 5]))
