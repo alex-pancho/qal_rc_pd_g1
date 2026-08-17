@@ -19,40 +19,40 @@ print("text4:", text4)
 print("text5:", text5)
 
 # Завдання 4.1: Перетворіть text1 у верхній регістр
-text1_upper = # Ваш код тут
+text1_upper =text1.upper() # Ваш код тут
 
 # Завдання 4.2: Перетворіть text2 у нижній регістр
-text2_lower = # Ваш код тут
+text2_lower = text2.lower()# Ваш код тут
 
 # Завдання 4.3: Перетворіть text3 у title case (перша літера кожного слова велика)
-text3_title = # Ваш код тут
+text3_title = text3.title()# Ваш код тут
 
 # Завдання 4.4: Перетворіть text4 за допомогою swapcase (інверсія регістру)
-text4_swapcase = # Ваш код тут
+text4_swapcase =text4.swapcase() # Ваш код тут
 
 # Завдання 4.5: Перетворіть text5 за допомогою capitalize (тільки перша літера велика)
-text5_capitalize = # Ваш код тут
+text5_capitalize =text5.capitalize() # Ваш код тут
 
 # Завдання 4.6: Перевірте, чи text1 складається тільки з великих літер
-text1_is_upper = # Ваш код тут
+text1_is_upper =text1.isupper() # Ваш код тут
 
 # Завдання 4.7: Перевірте, чи text2 складається тільки з великих літер
-text2_is_upper = # Ваш код тут
+text2_is_upper =text2.isupper() # Ваш код тут
 
 # Завдання 4.8: Перевірте, чи text3 складається тільки з малих літер
-text3_is_lower = # Ваш код тут
+text3_is_lower =text3.islower() # Ваш код тут
 
 # Завдання 4.9: Перевірте, чи text1 у форматі title case
-text1_is_title = # Ваш код тут
+text1_is_title =text1.istitle() # Ваш код тут
 
 # Завдання 4.10: Перевірте, чи text5 у форматі title case
-text5_is_title = # Ваш код тут
+text5_is_title =text5.istitle() # Ваш код тут
 
 # Завдання 4.11: Створіть text6 з text3, перетворивши у верхній регістр
-text6 = # Ваш код тут
+text6 =text3.upper() # Ваш код тут
 
 # Завдання 4.12: Перевірте, чи text6 складається тільки з великих літер
-text6_is_upper = # Ваш код тут
+text6_is_upper =text6.isupper() # Ваш код тут
 
 # Виведення результатів
 print("\n=== ПЕРЕТВОРЕННЯ ===")

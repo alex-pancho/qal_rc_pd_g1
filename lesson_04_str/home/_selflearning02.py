@@ -17,35 +17,36 @@ print("text3:", text3)
 print("text4:", text4)
 
 # Завдання 2.1: Розділіть text1 за комами
-split_by_comma = # Ваш код тут
+split_by_comma = text1.split(",")# Ваш код тут
 
 # Завдання 2.2: Розділіть text2 за пробілами
-split_by_space = # Ваш код тут
+split_by_space =text2.split() # Ваш код тут
 
 # Завдання 2.3: Розділіть text3 за дефісами
-split_by_dash = # Ваш код тут
+split_by_dash =text3.split("-") # Ваш код тут
 
 # Завдання 2.4: Розділіть text4 за символом "|"
-split_by_pipe = # Ваш код тут
+split_by_pipe =text4.split("|") # Ваш код тут
 
 # Завдання 2.5: Об'єднайте результат з 2.1 через " | "
-join_with_pipe = # Ваш код тут
+join_with_pipe =" | ".join(split_by_comma) # Ваш код тут
 
 # Завдання 2.6: Об'єднайте результат з 2.2 через " - "
-join_with_dash = # Ваш код тут
+join_with_dash = " - ".join(split_by_space)# Ваш код тут
 
 # Завдання 2.7: Об'єднайте результат з 2.3 через " + "
-join_with_plus = # Ваш код тут
+join_with_plus =" + ".join(split_by_dash) # Ваш код тут
 
 # Завдання 2.8: Об'єднайте результат з 2.4 через " AND "
-join_with_and = # Ваш код тут
+join_with_and =" AND ".join(split_by_pipe) # Ваш код тут
 
 # Завдання 2.9: Розділіть text1 за комами, але тільки перші 2 розділення
-split_limited = # Ваш код тут
+split_limited =text1.split(",",2) # Ваш код тут
 
 # Завдання 2.10: Створіть список з трьох слів та об'єднайте їх через ", "
 word_list = ["Python", "Java", "JavaScript"]
-join_languages = # Ваш код тут
+#word_list1=["Summer","Autumn","Winter"]
+join_languages =", ".join(word_list) # Ваш код тут
 
 # Виведення результатів
 print("\n=== РЕЗУЛЬТАТИ ===")
