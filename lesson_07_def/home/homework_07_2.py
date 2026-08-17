@@ -94,3 +94,76 @@ print(find_substring(str1, str2))  # Теперь вернет -1
 перетворіть їх у 4 функції, що отримують значення та повертають результат.
 Обов'язково документуйте функції та дайте зрозумілі імена змінним.
 """
+# таски взято з домашьоъї роботи №5 з попередніх уроків, де вони були реалізовані без функцій.
+from typing import Any, Dict, List, Sequence, TypeVar
+
+T = TypeVar("T")
+
+
+def get_unique_elements(items: Sequence[T], preserve_order: bool = True) -> List[T]:
+    """Повертає список унікальних елементів із переданої послідовності.
+
+    :param items: Вхідна послідовність (список, кортеж тощо).
+    :param preserve_order: Якщо True, зберігає початковий порядок елементів.
+                           Якщо False, повертає відсортована через set.
+    :return: Список унікальних елементів.
+    """
+    if preserve_order:
+        return list(dict.fromkeys(items))
+    return list(set(items))
+
+
+def calculate_mean(numbers: Sequence[int | float]) -> float:
+    """Обчислює середнє арифметичне для списку чисел.
+
+    :param numbers: Послідовність чисел (int або float).
+    :return: Середнє арифметичне значення у вигляді float.
+    :raises ValueError: Якщо передано порожній список.
+    """
+    if not numbers:
+        raise ValueError("Неможливо обчислити середнє арифметичне порожнього списку.")
+    return sum(numbers) / len(numbers)
+
+
+def check_for_duplicates(items: Sequence[Any]) -> bool:
+    """Перевіряє, чи містить послідовність хоча б один дублікат.
+
+    :param items: Вхідний список або послідовність елементів.
+    :return: True, якщо є дублікати, інакше False.
+    """
+    return len(items) != len(set(items))
+
+
+def invert_dictionary(input_dict: Dict[Any, Any]) -> Dict[Any, Any]:
+    """Створює новий словник, у якому ключі та значення міняються місцями.
+
+    :param input_dict: Вхідний словник (значення мають бути хешованими).
+    :return: Новий словник з інвертованими ключами та значеннями.
+    """
+    return {value: key for key, value in input_dict.items()}
+
+
+# ПРИКЛАДИ ВИКОРИСТАННЯ ТА ПЕРЕВІРКА РЕЗУЛЬТАТІВ
+
+# 1. Тест функції 1 (Task 1: Унікальні елементи)
+numbers_list = [3, 1, 4, 5, 2, 5, 3]
+unique_numbers = get_unique_elements(numbers_list)
+print(f"Task 1 (Унікальні елементи): {unique_numbers}")
+# Результат: [3, 1, 4, 5, 2]
+
+# 2. Тест функції 2 (Task 2: Середнє арифметичне)
+mean_value = calculate_mean(numbers_list)
+print(f"Task 2 (Середнє арифметичне): {mean_value:.2f}")
+# Результат: 3.29
+
+# 3. Тест функції 3 (Task 3: Перевірка на дублікати)
+data_with_duplicates = [3, 5, -2, -1, -3, 0, 1, 4, 5, 2]
+has_dup = check_for_duplicates(data_with_duplicates)
+print(f"Task 3 (Чи є дублікати?): {has_dup}")
+# Результат: True
+
+# 4. Тест функції 4 (Task 5: Інверсія словника)
+country_info = {"contry": "Ukraine", "continent": "Europe", "size": 123}
+inverted_country_info = invert_dictionary(country_info)
+print(f"Task 5 (Інвертований словник): {inverted_country_info}")
+# Результат: {'Ukraine': 'contry', 'Europe': 'continent', 123: 'size'}
