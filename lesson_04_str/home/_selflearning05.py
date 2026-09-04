@@ -19,40 +19,40 @@ print("text4:", text4)
 print("text5:", text5)
 
 # Завдання 5.1: Знайдіть позицію першого входження "Hello" в text1
-position_hello = # Ваш код тут
+position_hello =text1.find("Hello") # Ваш код тут
 
 # Завдання 5.2: Знайдіть позицію першого входження "Python" в text2
-position_python = # Ваш код тут
+position_python =text2.find("Python") # Ваш код тут
 
 # Завдання 5.3: Знайдіть позицію "Java" в text2 (слова, якого там немає)
-position_java = # Ваш код тут
+position_java = text2.find("Java")# Ваш код тут
 
 # Завдання 5.4: Знайдіть позицію "Script" в text3
-position_script = # Ваш код тут
+position_script =text3.find("Script") # Ваш код тут
 
 # Завдання 5.5: Замініть всі входження "Hello" на "Hi" в text1
-text1_replaced = # Ваш код тут
+text1_replaced =text1.replace("Hello","Hi") # Ваш код тут
 
 # Завдання 5.6: Замініть всі входження "Python" на "Java" в text2
-text2_replaced = # Ваш код тут
+text2_replaced =text2.replace("Python", "Java") # Ваш код тут
 
 # Завдання 5.7: Замініть "JavaScript" на "Python" в text3
-text3_replaced = # Ваш код тут
+text3_replaced = text3.replace("JavaScript", "Python")# Ваш код тут
 
 # Завдання 5.8: Замініть всі входження "good" на "great" в text4
-text4_replaced = # Ваш код тут
+text4_replaced =text4.replace("good","great").replace("Good","Great") # Ваш код тут
 
 # Завдання 5.9: Замініть тільки перше входження "apple" на "cherry" в text5
-text5_replaced_first = # Ваш код тут (використайте третій параметр у replace)
+text5_replaced_first = text5.replace("apple","cherry",1)# Ваш код тут (використайте третій параметр у replace)
 
 # Завдання 5.10: Замініть всі входження "apple" на "cherry" в text5
-text5_replaced_all = # Ваш код тут
+text5_replaced_all =text5.replace("apple","cherry") # Ваш код тут
 
 # Завдання 5.11: Знайдіть позицію "world" в text1
-position_world = # Ваш код тут
+position_world = text1.find("world")# Ваш код тут
 
 # Завдання 5.12: Замініть "," на " | " в text5
-text5_with_pipes = # Ваш код тут
+text5_with_pipes =text5.replace(",", " | ") # Ваш код тут
 
 # Виведення результатів
 print("\n=== ПОШУК ===")

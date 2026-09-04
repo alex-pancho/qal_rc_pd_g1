@@ -2,8 +2,8 @@
 small_list = [3, 1, 4, 5, 2, 5, 3]
 unique_elements=list(set(small_list))
 print(f"{unique_elements}")
-# task 2. Знайдіть середнє арифметичне всіх елементів у списку small_list
 
+# task 2. Знайдіть середнє арифметичне всіх елементів у списку small_list
 ser_arifmetychne=sum(small_list)/len(small_list)
 print(f"{ser_arifmetychne:.2f}")
 
@@ -17,9 +17,8 @@ else: print(f"Є дублікати!!!")
 base_dict = {'contry':'Ukraine', 'continent': 'Europe', 'size': 123}
 add_dict = {"a":1, "b":2, "c":2, "d":3, 'size': 12}
 
-max_key_add_dict= max(add_dict,key=add_dict.get)
+max_key_add_dict=max(add_dict, key=add_dict.get)
 print(f"{max_key_add_dict}")
-
 # task 5. Створіть новий словник, в якому ключі та значення base_dict будуть
 # замінені місцями ({'Ukraine':'contry'...})
 inverted_base_dict={}
@@ -27,23 +26,17 @@ for key, value in base_dict.items():
     inverted_base_dict[value]=key
 print(f"{inverted_base_dict}")
 
-
-
 # task 6. Об'єднайте два словника base_dict та add_dict  в новий словник sum_dict
 # Якщо ключі збігаються, то перетворіть значення в строку та об'єднайте їх
 sum_dict = {}
-
 for key, value in base_dict.items():
     sum_dict[key]=value
-
 for key, value in add_dict.items():
-    if key in sum_dict:
-        sum_dict[key]=str(sum_dict[key])+str(value)
+    if key in sum_dict: #перевіряємо чи є ключ у sum_dict
+        sum_dict[key]=str(sum_dict[key])+str(value) #об'єднуємо два значення з однаковими ключами
     else:
         sum_dict[key]=value
-print(f"{sum_dict}")
-
-
+print(f"{sum_dict}")   
 # task 7.
 line = "Створіть список з всіх символів, які входять у заданий рядок"
 char_list=list(line)

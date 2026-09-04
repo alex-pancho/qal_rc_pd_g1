@@ -19,40 +19,40 @@ print("text4:", text4)
 print("text5:", text5)
 
 # Завдання 3.1: Перевірте, чи text1 починається з "Hello"
-starts_with_hello = # Ваш код тут
+starts_with_hello = text1.startswith("Hello")# Ваш код тут
 
 # Завдання 3.2: Перевірте, чи text1 закінчується на "!"
-ends_with_exclamation = # Ваш код тут
+ends_with_exclamation =text1.endswith("!") # Ваш код тут
 
 # Завдання 3.3: Перевірте, чи text2 починається з "Python"
-starts_with_python = # Ваш код тут
+starts_with_python = text2.startswith("Python")# Ваш код тут
 
 # Завдання 3.4: Перевірте, чи text2 закінчується на "language"
-ends_with_language = # Ваш код тут
+ends_with_language = text2.endswith("language")# Ваш код тут
 
 # Завдання 3.5: Перевірте, чи text3 починається з "Welcome"
-starts_with_welcome = # Ваш код тут
+starts_with_welcome =text3.startswith("Welcome") # Ваш код тут
 
 # Завдання 3.6: Перевірте, чи text3 закінчується на "Ukraine"
-ends_with_ukraine = # Ваш код тут
+ends_with_ukraine =text3.endswith("Ukraine") # Ваш код тут
 
 # Завдання 3.7: Перевірте, чи text4 починається з "Bad"
-starts_with_bad = # Ваш код тут
+starts_with_bad = text4.startswith("Bad")# Ваш код тут
 
 # Завдання 3.8: Перевірте, чи text4 закінчується на "everyone"
-ends_with_everyone = # Ваш код тут
+ends_with_everyone =text4.endswith("everyone") # Ваш код тут
 
 # Завдання 3.9: Перевірте, чи text5 закінчується на ".py"
-ends_with_py = # Ваш код тут
+ends_with_py = text5.endswith(".py")# Ваш код тут
 
 # Завдання 3.10: Перевірте, чи text5 починається з "prog"
-starts_with_prog = # Ваш код тут
+starts_with_prog = text5.startswith("prog")# Ваш код тут
 
 # Завдання 3.11: Комбінована перевірка - чи text1 починається з "Hello" І закінчується на "!"
-combined_check1 = # Ваш код тут
+combined_check1 =text1.startswith("Hello") and text1.endswith("!") # Ваш код тут
 
 # Завдання 3.12: Комбінована перевірка - чи text2 починається з "Java" АБО закінчується на "language"
-combined_check2 = # Ваш код тут
+combined_check2 =text2.startswith("Java") or text2.endswith("language") # Ваш код тут
 
 # Виведення результатів
 print("\n=== РЕЗУЛЬТАТИ ===")

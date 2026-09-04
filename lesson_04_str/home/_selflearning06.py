@@ -21,42 +21,42 @@ print("text5: '" + text5 + "'")
 print("text6: '" + text6 + "'")
 
 # Завдання 6.1: Видаліть пробіли з обох кінців text1
-text1_strip = # Ваш код тут
+text1_strip = text1.strip()# Ваш код тут
 
 # Завдання 6.2: Видаліть пробіли тільки з початку text1
-text1_lstrip = # Ваш код тут
+text1_lstrip = text1.lstrip()# Ваш код тут
 
 # Завдання 6.3: Видаліть пробіли тільки з кінця text1
-text1_rstrip = # Ваш код тут
+text1_rstrip =text1.rstrip() # Ваш код тут
 
 # Завдання 6.4: Видаліть табуляції з обох кінців text2
-text2_strip = # Ваш код тут
+text2_strip = text2.strip()# Ваш код тут
 
 # Завдання 6.5: Видаліть табуляції тільки з початку text2
-text2_lstrip = # Ваш код тут
+text2_lstrip =text2.lstrip() # Ваш код тут
 
 # Завдання 6.6: Видаліть символи нового рядка з обох кінців text3
-text3_strip = # Ваш код тут
+text3_strip =text3.strip() # Ваш код тут
 
 # Завдання 6.7: Видаліть пробіли з обох кінців text4
-text4_strip = # Ваш код тут
+text4_strip =text4.strip() # Ваш код тут
 
 # Завдання 6.8: Видаліть символи "*" з обох кінців text5
-text5_strip_stars = # Ваш код тут (використайте strip("*"))
+text5_strip_stars =text5.strip("*") # Ваш код тут (використайте strip("*"))
 
 # Завдання 6.9: Видаліть символи "*" тільки з початку text5
-text5_lstrip_stars = # Ваш код тут
+text5_lstrip_stars =text5.lstrip("*") # Ваш код тут
 
 # Завдання 6.10: Видаліть символи "*" тільки з кінця text5
-text5_rstrip_stars = # Ваш код тут
+text5_rstrip_stars =text5.rstrip("*") # Ваш код тут
 
 # Завдання 6.11: Перевірте довжину text6 до та після strip
-text6_length_before = # Ваш код тут
-text6_stripped = # Ваш код тут
-text6_length_after = # Ваш код тут
+text6_length_before =len(text6) # Ваш код тут
+text6_stripped =text6.strip() # Ваш код тут
+text6_length_after =len(text6_stripped) # Ваш код тут
 
 # Завдання 6.12: Комбінована операція - спочатку strip, потім upper для text1
-text1_strip_upper = # Ваш код тут
+text1_strip_upper = text1.strip().upper()# Ваш код тут
 
 # Виведення результатів
 print("\n=== РЕЗУЛЬТАТИ (показані з лапками) ===")
