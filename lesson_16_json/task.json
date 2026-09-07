@@ -1,0 +1,12 @@
+{
+    "id": 1,
+    "title": "Написати звіт",
+    "status": "open",
+    "priority": "high",
+    "tags": [
+        "робота",
+        "терміново"
+    ],
+    "assignee": null,
+    "20years": "JustMarried"
+}

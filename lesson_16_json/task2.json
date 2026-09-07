@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Fix bug",
+        "status": "open",
+        "priority": "high"
+    },
+    {
+        "title": "Write tests",
+        "status": "done",
+        "priority": "low"
+    }
+]
