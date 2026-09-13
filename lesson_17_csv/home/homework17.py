@@ -77,3 +77,4 @@ if __name__ == "__main__":
             f.write("id,name,email\n2,Марія,maria@test.com\n4,Олена,elena@test.com\n")
 
     main()
+    
