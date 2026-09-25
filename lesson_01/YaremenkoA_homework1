@@ -16,72 +16,60 @@ banana = apples + 4
 # task 04 == виправте назви змінних
 storona_1 = 1
 storona_2 = 2
-сторона_3 = 3
-сторона_4 = 4
+storona_3 = 3
+storona_4 = 4
 
 # task 05 == Порахуйте периметр фігури з task 04
 # та виведіть його для користувача
-perimeter = storona_1 + storona_2 + сторона_3 + сторона_4
-print(f"Периметр фігури: {perimeter}")
+perimetery = storona_1 + storona_2 + storona_3 + storona_4
+print(f"Периметр фігури дорівнює: {perimetery}")
 
 # task 06
 art_stamps = 20
 animal_stamps = 7
 
-art_given = 5
-animal_given = 1
-
-total_start = art_stamps + animal_stamps
-total_given = art_given + animal_given
-stamps_left = total_start - total_given
-
-print(f"Спочатку у Оксани було {total_start} марок.")
-print(f"Вона подарувала подружці {total_given} марок.")
-print(f"У Оксани залишилося {stamps_left} марок.")
+art_left = art_stamps - 5
+animal_left = animal_stamps - 1
+total_stamps = art_left + animal_left
+print(f"У Оксани лишилося {total_stamps} марок.")
 
 # task 07
-apple_trees = 4
-pear_trees = apple_trees + 5
-plum_trees = pear_trees - 2
+apples = 4
+pears = apples + 5
+plums = apples - 2
 
-total_trees = apple_trees + pear_trees + plum_trees
+total_trees = apples + pears + plums
 
-print(f"У саду посадили {apple_trees} яблуні, {pear_trees} груш та {plum_trees} слив.")
-print(f"Усього в саду посадили {total_trees} дерев.")
+print(f"У саду всього посадили {total_trees} дерев.")
+
 
 # task 08
-temp_start = 5
-temp_after_lunch = temp_start - 10
-temp_evening = temp_after_lunch + 4
+temp_noon = 5
+temp_afternoon = temp_noon - 10
+temp_evening = temp_afternoon + 4
 
-print(f"Спочатку було {temp_start} градусів тепла.")
-print(f"Після обіду стало {temp_after_lunch} градусів.")
-print(f"Надвечір температура піднялася до {temp_evening} градусів нижче нуля (-1 градус).")
+print(f"Надвечір температура повітря становить {temp_evening} градусів.")
+
 
 # task 09
 boys = 24
 girls = boys // 2
 
-boys_absent = 1
-girls_absent = 2
+boys_present = boys - 1
+girls_present = girls - 2
+total_children = boys_present + girls_present
 
-present_boys = boys - boys_absent
-present_girls = girls - girls_absent
-total_children_today = present_boys + present_girls
+print(f"Сьогодні у гуртку {total_children} дітей.")
 
-print(f"У гуртку {boys} хлопчиків і {girls} дівчаток.")
-print(f"Сьогодні прийшло {present_boys} хлопчиків та {present_girls} дівчаток.")
-print(f"Сьогодні на занятті {total_children_today} дітей.")
 
 # task 10
-book1_price = 8
-book2_price = book1_price + 2
-book3_price = (book1_price + book2_price) // 2
+book1 = 8
+book2 = book1 + 2
+book3 = (book1 + book2) // 2
 
-total_cost = book1_price + book2_price + book3_price
+total_cost = book1 + book2 + book3
 
-print(f"Перша книжка коштує {book1_price} грн, друга — {book2_price} грн, а третя — {book3_price} грн.")
-print(f"За всі три книжки разом треба заплатити {total_cost} грн.")
+print(f"Усі три книжки разом коштують {total_cost} грн.")
 """
     # Задачі 06 -10:
     # Переведіть задачі з книги "Математика, 2 клас"
@@ -124,4 +112,4 @@ print(f"За всі три книжки разом треба заплатити
 а третя - як половина вартості першої та другої разом.
 Скільки будуть коштувати усі книги, якщо купити по одному примірнику?
 """
-
+print("Кінець завдання")
