@@ -1,8 +1,9 @@
 from typing import Union, Any
 
 
-def square(number: int | float) -> int | float:
+def square(number: int | float) -> int | float:  # noqa
     return number * number
+
 
 def multiply(
     a: int | float,
@@ -11,11 +12,14 @@ def multiply(
 
     return a * b
 
+
 def greet(name: str) -> str:
     return f"Hello {name}"
 
+
 def is_adult(age: int) -> bool:
     return age >= 18
+
 
 numbers: list[int] = [1, 2, 3]
 names: list[str] = ["Alex", "Ben", "Cindy"]
@@ -25,13 +29,10 @@ value: Union[int, str]
 
 value2: Any
 
+
 class User:
 
-    def __init__(
-        self,
-        name: str,
-        age: int
-    ):
+    def __init__(self, name: str, age: int):
 
         self.name = name
         self.age = age
@@ -40,11 +41,10 @@ class User:
         return self.name
 
 
-def calculate_total(
-    prices: list[float]
-) -> float:
+def calculate_total(prices: list[float]) -> float:
 
     return sum(prices)
+
 
 # def get_name() -> str:
 #     return 123
