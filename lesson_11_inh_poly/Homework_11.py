@@ -1,6 +1,3 @@
-from unicodedata import name
-
-
 class Cossack:
     def __init__(self, name, weapons, kurin, victories, rank = "козак"):
         self.name = name
