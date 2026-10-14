@@ -1,0 +1,20 @@
+{
+    "expedition_id": "EXP-02",
+    "researcher": "Филарет Колесса",
+    "location": "Харків",
+    "date": "1912-08-20",
+    "records": [
+        {
+            "title": "Ой у лузі червона калина",
+            "genre": "пісня",
+            "region": "Харківщина",
+            "narrator": "Панас",
+            "year": 1912,
+            "content": "...",
+            "tags": [
+                "пісня"
+            ],
+            "verified": true
+        }
+    ]
+}
