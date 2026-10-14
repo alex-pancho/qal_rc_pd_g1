@@ -1,70 +1,52 @@
-# task 01 == Виправте синтаксичні помилки
-print("Hello", end = " ")
-    print("world!")
+print("Hello", "world!")
 
-# task 02  == Виправте назви змінних, щоб текст виводався
 hello = "Hello"
-world = "world"
-print(f"{helo} {word}!")
+world = "World"
+print(f"{hello}, {world}!")
 
-# task 03 == Зробіть так, щоб кількість бананів була
-# завжди на чотири штуки більша, ніж яблук
 apples = 2
-banana = # код тут
+banana = apples + 4
+print (banana)
 
+storona1 = 1
+storona2 = 2
+storona3 = 3
+storona4 = 4
+perimetery = storona1 + storona2 + storona3 + storona4
+print(perimetery)
 
-# task 04 == виправте назви змінних
-1_storona = 1
-?torona_2 = 2
-сторона_3 = 3
-$torona_4 = 4
+art = 20
+animal = 7
+save_art = art - 5
+save_animal = animal - 1
+print(save_art + save_animal)
 
-# task 05 == Порахуйте периметр фігури з task 04
-# та виведіть його для користувача
-perimetery = ? + ? + ? + ?
-print()
+apples = 4
+pears = apples + 5 
+plums = apples - 2
+sum_trees = apples + pears + plums
+print(sum_trees)
 
+morning_temperature = 5
+day_temperature = morning_temperature - 10
+evening_temperature = day_temperature + 4
+print(evening_temperature)
 
-"""
-    # Задачі 06 -10:
-    # Переведіть задачі з книги "Математика, 2 клас"
-    # на мову пітон і виведіть відповідь, так, щоб було
-    # зрозуміло дитині, що навчається в другому класі
-"""
+boys = 24
+girls = boys / 2
+boys_here = boys - 1
+girls_here = girls - 2
+children_here = boys_here + girls_here
+print(children_here)
 
-# task 06
+book1 = 8
+book2 = book1 + 2
+book3 = (book1 + book2) / 2
+price_books = book1 + book2 + book3
+print(price_books)
 """
-У Оксани було 20 марок із серії «Мистецтво» 
-і 7 марок із серії «Звірі».
-5 марок із серії «Мистецтво» та
-1 марку із серії «Звірі» вона подарувала подружці. 
-Скільки марок лишилось у Оксани?
-"""
-
-# task 07
-"""
-У саду посадили 4 яблуні. Груш на 5 більше яблунь, а слив - на 2 менше.
-Скільки всього дерев посадили в саду?
-"""
-
-# task 08
-"""
-До обіда температура повітря була на 5 градусів вище нуля.
-Після обіду температура опустилася на 10 градусів.
-Надвечір потепліло на 4 градуси. Яка температура надвечір?
-"""
-
-# task 09
-"""
-Взагалі у театральному гуртку - 24 хлопчики, а дівчаток - вдвічі менше.
-1 хлопчик захворів та 2 дівчинки не прийшли сьогодні.
-Скількі сьогодні дітей у театральному гуртку?
-"""
-
-# task 10
-"""
-Перша книжка коштує 8 грн., друга - на 2 грн. дороже,
-а третя - як половина вартості першої та другої разом.
-Скільки будуть коштувати усі книги, якщо купити по одному примірнику?
-"""
+# не брати до уваги:
+name = "Ivan"
+last_name = "Voronov"
+print(name + last_name)
 
