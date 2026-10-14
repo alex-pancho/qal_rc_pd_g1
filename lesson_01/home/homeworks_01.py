@@ -1,28 +1,28 @@
 # task 01 == Виправте синтаксичні помилки
-print("Hello", end = " ")
-    print("world!")
+print("Hello", end =" ")
+print("world!")
 
 # task 02  == Виправте назви змінних, щоб текст виводався
-hello = "Hello"
-world = "world"
+helo = "Hello"
+word = "world"
 print(f"{helo} {word}!")
 
 # task 03 == Зробіть так, щоб кількість бананів була
 # завжди на чотири штуки більша, ніж яблук
 apples = 2
-banana = # код тут
+banana = apples + 4
 
 
 # task 04 == виправте назви змінних
-1_storona = 1
-?torona_2 = 2
-сторона_3 = 3
-$torona_4 = 4
+storona_1 = 1
+storona_2 = 2
+storona_3 = 3
+storona_4 = 4
 
 # task 05 == Порахуйте периметр фігури з task 04
 # та виведіть його для користувача
-perimetery = ? + ? + ? + ?
-print()
+perimetery = storona_1 + storona_2 + storona_3 + storona_4
+print(perimetery)
 
 
 """
@@ -40,12 +40,36 @@ print()
 1 марку із серії «Звірі» вона подарувала подружці. 
 Скільки марок лишилось у Оксани?
 """
+# Скільки марок було спочатку
+mistetstvo = 20
+zviri = 7
+
+# Скільки марок Оксана подарувала
+mistetstvo_gift = 5
+zviri_gift = 1
+
+# Скільки марок залишилось
+mistetstvo_left = mistetstvo - mistetstvo_gift
+zviri_left = zviri - zviri_gift
+
+# Загальна кількість марок
+total_left = mistetstvo_left + zviri_left
+
+print("У Оксани залишилось", total_left, "марок.")
 
 # task 07
 """
 У саду посадили 4 яблуні. Груш на 5 більше яблунь, а слив - на 2 менше.
 Скільки всього дерев посадили в саду?
 """
+# У саду посадили
+apple_tree = 4
+pear_tree = apple_tree + 5
+plum_tree = apple_tree - 2
+# Загальна кількість дерев
+total_trees = apple_tree + pear_tree + plum_tree
+print("У саду посадили всього", total_trees, "дерев.")
+
 
 # task 08
 """
@@ -53,6 +77,16 @@ print()
 Після обіду температура опустилася на 10 градусів.
 Надвечір потепліло на 4 градуси. Яка температура надвечір?
 """
+# Температура до обіду
+temp_morning = 5
+
+# Після обіду стало холодніше на 10 градусів
+temp_after_lunch = temp_morning - 10
+
+# Надвечір потепліло на 4 градуси
+temp_evening = temp_after_lunch + 4
+
+print("Надвечір температура була", temp_evening, "градусів.")
 
 # task 09
 """
@@ -61,6 +95,20 @@ print()
 Скількі сьогодні дітей у театральному гуртку?
 """
 
+boys = 24
+girls = boys / 2
+boys_absent = 1
+girls_absent = 2
+
+# Скільки прийшло хлопчиків і дівчаток
+boys_today = boys - boys_absent
+girls_today = girls - girls_absent
+
+# Загальна кількість дітей сьогодні
+t_today = boys_today + girls_today
+
+print("Сьогодні у гуртку", t_today, "дітей.")
+
 # task 10
 """
 Перша книжка коштує 8 грн., друга - на 2 грн. дороже,
@@ -68,3 +116,10 @@ print()
 Скільки будуть коштувати усі книги, якщо купити по одному примірнику?
 """
 
+book1 = 8
+book2 = book1 + 2
+book3 = (book1 + book2) / 2
+
+# Загальна вартість трьох книжок
+total = book1 + book2 + book3
+print("Усі три книжки разом коштують", total, "грн.")
