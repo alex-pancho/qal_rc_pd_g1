@@ -1,8 +1,12 @@
 import unittest
+
+
 try:
     from lesson_14_try_except_log.home.homework_14 import sum_numbers_in_list
 except:
     from homework_14 import sum_numbers_in_list
+
+
 
 
 
@@ -95,3 +99,4 @@ class TestSumNumbersInList(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
