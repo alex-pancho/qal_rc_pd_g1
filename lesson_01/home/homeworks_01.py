@@ -1,30 +1,87 @@
 # task 01 == Виправте синтаксичні помилки
 print("Hello", end = " ")
-    print("world!")
+print("world!")
 
 # task 02  == Виправте назви змінних, щоб текст виводався
 hello = "Hello"
 world = "world"
-print(f"{helo} {word}!")
+print(f"{hello} {world}!")
 
 # task 03 == Зробіть так, щоб кількість бананів була
 # завжди на чотири штуки більша, ніж яблук
 apples = 2
-banana = # код тут
+banana = apples + 4
 
 
 # task 04 == виправте назви змінних
-1_storona = 1
-?torona_2 = 2
+storona_1 = 1
+storona_2 = 2
 сторона_3 = 3
-$torona_4 = 4
+сторона_4 = 4
 
 # task 05 == Порахуйте периметр фігури з task 04
 # та виведіть його для користувача
-perimetery = ? + ? + ? + ?
-print()
+perimeter = storona_1 + storona_2 + сторона_3 + сторона_4
+print(f"Периметр фігури: {perimeter}")
 
+# task 06
+art_stamps = 20
+animal_stamps = 7
 
+art_given = 5
+animal_given = 1
+
+total_start = art_stamps + animal_stamps
+total_given = art_given + animal_given
+stamps_left = total_start - total_given
+
+print(f"Спочатку у Оксани було {total_start} марок.")
+print(f"Вона подарувала подружці {total_given} марок.")
+print(f"У Оксани залишилося {stamps_left} марок.")
+
+# task 07
+apple_trees = 4
+pear_trees = apple_trees + 5
+plum_trees = pear_trees - 2
+
+total_trees = apple_trees + pear_trees + plum_trees
+
+print(f"У саду посадили {apple_trees} яблуні, {pear_trees} груш та {plum_trees} слив.")
+print(f"Усього в саду посадили {total_trees} дерев.")
+
+# task 08
+temp_start = 5
+temp_after_lunch = temp_start - 10
+temp_evening = temp_after_lunch + 4
+
+print(f"Спочатку було {temp_start} градусів тепла.")
+print(f"Після обіду стало {temp_after_lunch} градусів.")
+print(f"Надвечір температура піднялася до {temp_evening} градусів нижче нуля (-1 градус).")
+
+# task 09
+boys = 24
+girls = boys // 2
+
+boys_absent = 1
+girls_absent = 2
+
+present_boys = boys - boys_absent
+present_girls = girls - girls_absent
+total_children_today = present_boys + present_girls
+
+print(f"У гуртку {boys} хлопчиків і {girls} дівчаток.")
+print(f"Сьогодні прийшло {present_boys} хлопчиків та {present_girls} дівчаток.")
+print(f"Сьогодні на занятті {total_children_today} дітей.")
+
+# task 10
+book1_price = 8
+book2_price = book1_price + 2
+book3_price = (book1_price + book2_price) // 2
+
+total_cost = book1_price + book2_price + book3_price
+
+print(f"Перша книжка коштує {book1_price} грн, друга — {book2_price} грн, а третя — {book3_price} грн.")
+print(f"За всі три книжки разом треба заплатити {total_cost} грн.")
 """
     # Задачі 06 -10:
     # Переведіть задачі з книги "Математика, 2 клас"
