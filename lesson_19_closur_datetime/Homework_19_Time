@@ -1,0 +1,97 @@
+import re
+import logging
+
+from pathlib import Path
+from datetime import datetime
+from urllib.request import urlopen
+
+
+def read_heartbeats(url: str):
+    pattern = r"Timestamp\s+(\d{2}:\d{2}:\d{2})\s+Key\s+(\S+)"
+
+    with urlopen(url, timeout=30) as file:
+        for line_number, raw_line in enumerate(file, start=1):
+            line = raw_line.decode("utf-8")
+            match = re.search(pattern, line)
+
+            if match:
+                timestamp = match.group(1)
+                key = match.group(2)
+
+                yield line_number, timestamp, key
+
+
+def to_seconds(timestamp):
+    time_value = datetime.strptime(timestamp, "%H:%M:%S")
+
+    return (
+        time_value.hour * 3600
+        + time_value.minute * 60
+        + time_value.second
+    )
+
+
+def analyze_log(filepath: str, result_path: Path):
+
+    logging.basicConfig(
+        filename=str(result_path),
+        filemode="w",
+        level=logging.WARNING,
+        format="%(levelname)s: %(message)s",
+        encoding="utf-8",
+        force=True
+    )
+
+    previous_times = {}
+
+    warning_count = 0
+    error_count = 0
+
+    for line_number, timestamp, key in read_heartbeats(filepath):
+
+        current_seconds = to_seconds(timestamp)
+
+        if key in previous_times:
+            previous_seconds, previous_timestamp = previous_times[key]
+
+            interval = abs(current_seconds - previous_seconds)
+
+            # Корекція переходу через північ
+            interval = min(interval, 86400 - interval)
+
+            message = (
+                f"Key: {key} | "
+                f"Інтервал: {interval} сек. | "
+                f"Час: {previous_timestamp} — {timestamp} | "
+                f"Рядок: {line_number}"
+            )
+
+            if 31 < interval <= 33:
+                logging.warning(message)
+                warning_count += 1
+
+            elif interval > 33:
+                logging.error(message)
+                error_count += 1
+
+        previous_times[key] = (current_seconds, timestamp)
+
+    return warning_count, error_count
+
+
+if __name__ == "__main__":
+
+    base_path = Path(__file__).parent
+
+    input_url = (
+        "https://raw.githubusercontent.com/"
+        "alex-pancho/testing_ideas/main/heartbeat/hblog"
+    )
+
+    output_file = base_path / "hb_test.log"
+
+    warnings, errors = analyze_log(input_url, output_file)
+
+    print(f"Знайдено WARNING: {warnings}")
+    print(f"Знайдено ERROR: {errors}")
+    print(f"Результат записано у файл: {output_file}")
