@@ -1,0 +1,245 @@
+from abc import ABC, abstractmethod
+
+
+class MagicCreature(ABC):
+    def __init__(self, name, magic_level, health):
+        self.name = name
+        self._magic_level = self._check_magic(magic_level)
+        self.__alive = True
+        self.__health = self._check_health(health)
+
+    def _check_magic(self, level):
+        if level < 1 or level > 10:
+            raise ValueError("Рівень магії має бути від 1 до 10!")
+        return level
+
+    def _check_health(self, hp):
+        if hp < 0 or hp > 100:
+            raise ValueError("Здоров'я має бути від 0 до 100!")
+        return hp
+
+    @property
+    def health(self):
+        return self.__health
+
+    @health.setter
+    def health(self, value):
+        if value <= 0:
+            self.__health = 0
+            self.__alive = False
+        elif value > 100:
+            self.__health = 100
+        else:
+            self.__health = value
+
+    @property
+    def magic_level(self):
+        return self._magic_level
+
+    @magic_level.setter
+    def magic_level(self, value):
+        self._magic_level = self._check_magic(value)
+
+    @property
+    def is_alive(self):
+        return self.__alive
+
+    @abstractmethod
+    def use_ability(self):
+        pass
+
+    @abstractmethod
+    def describe(self):
+        pass
+
+    def take_damage(self, amount):
+        if not self.__alive:
+            return f"{self.name} вже переміг смерть... або ні."
+        self.health = self.__health - amount
+
+    def __str__(self):
+        return (
+            f"{self.name} | Магія: {self._magic_level} | "
+            f"HP: {self.__health} | Живий: {self.__alive}"
+        )
+
+
+class Molfar(MagicCreature):
+    def __init__(self, name, magic_level, health, element, spells):
+        super().__init__(name, magic_level, health)
+        self.element = element
+        self.spells = spells
+
+    @property
+    def spells(self):
+        return self.__spells
+
+    @spells.setter
+    def spells(self, value):
+        if value < 0:
+            raise ValueError("Кількість заклинань не може бути від'ємною!")
+        self.__spells = value
+
+    def use_ability(self):
+        if self.__spells > 0:
+            self.__spells -= 1
+            return (
+                f"Мольфар {self.name} закликає {self.element}! "
+                f"Залишилось заклинань: {self.__spells}"
+            )
+        return f"Мольфар {self.name} виснажений — сила стихій покинула його!"
+
+    def describe(self):
+        return (
+            f"Мольфар {self.name}, повелитель стихії {self.element}. "
+            f"Рівень магії: {self._magic_level}"
+        )
+
+
+class Rusalka(MagicCreature):
+    def __init__(self, name, magic_level, health, river, charm_power):
+        super().__init__(name, magic_level, health)
+        self.river = river
+        self.charm_power = charm_power
+
+    @property
+    def charm_power(self):
+        return self.__charm_power
+
+    @charm_power.setter
+    def charm_power(self, value):
+        if value < 1 or value > 5:
+            raise ValueError("Сила чар має бути від 1 до 5!")
+        self.__charm_power = value
+
+    def use_ability(self):
+        text = (
+            f"Русалка {self.name} з річки {self.river} зачаровує мандрівника! "
+            f"Сила чар: {self.__charm_power}"
+        )
+        if self.__charm_power == 5:
+            text += " Ніхто не встоїть!"
+        return text
+
+    def describe(self):
+        return (
+            f"Русалка {self.name}, мешканка річки {self.river}. "
+            f"Сила чар: {self.__charm_power}/5"
+        )
+
+
+class Perelesnyk(MagicCreature):
+    def __init__(self, name, magic_level, health, speed, form="вогняна куля"):
+        super().__init__(name, magic_level, health)
+        self.speed = speed
+        self.form = form
+
+    @property
+    def speed(self):
+        return self.__speed
+
+    @speed.setter
+    def speed(self, value):
+        if value < 1 or value > 100:
+            raise ValueError("Швидкість має бути від 1 до 100!")
+        self.__speed = value
+
+    def change_form(self):
+        if self.form == "вогняна куля":
+            self.form = "людська"
+        else:
+            self.form = "вогняна куля"
+        return f"Перелесник перетворився на {self.form}!"
+
+    def use_ability(self):
+        text = (
+            f"Перелесник {self.name} мчить зі швидкістю {self.__speed}! "
+            f"Форма: {self.form}"
+        )
+        if self.form == "людська":
+            text += " Ніхто не здогадається."
+        return text
+
+    def describe(self):
+        return (
+            f"Перелесник {self.name}. Швидкість: {self.__speed}. "
+            f"Зараз у формі: {self.form}"
+        )
+
+
+class EnchantedForest:
+    def __init__(self, name, capacity):
+        self.name = name
+        self.capacity = capacity
+        self.__creatures = []
+
+    def add_creature(self, creature):
+        if len(self.__creatures) >= self.capacity:
+            return f"Зачарований ліс {self.name} щось переповнений!"
+        if not creature.is_alive:
+            return "Мертві істоти не можуть оселитись у лісі!"
+        for item in self.__creatures:
+            if item.name == creature.name:
+                return f"{creature.name} вже мешкає у цьому лісі!"
+        self.__creatures.append(creature)
+
+    def remove_creature(self, name):
+        for item in self.__creatures:
+            if item.name == name:
+                self.__creatures.remove(item)
+                return
+        return f"Істоту {name} не знайдено у лісі!"
+
+    def most_powerful(self):
+        if not self.__creatures:
+            return "Ліс порожній — нема кому чаклувати!"
+        best = self.__creatures[0]
+        for item in self.__creatures:
+            if item.magic_level > best.magic_level:
+                best = item
+        return best
+
+    def attack_intruder(self, intruder_name):
+        if not self.__creatures:
+            return f"Ліс беззахисний перед {intruder_name}!"
+        result = []
+        for item in self.__creatures:
+            if item.is_alive:
+                result.append(item.use_ability())
+        return result
+
+    def census(self):
+        if not self.__creatures:
+            return "Ліс порожній"
+        result = []
+        for item in self.__creatures:
+            result.append(item.describe())
+        return result
+
+    @property
+    def creatures_count(self):
+        count = 0
+        for item in self.__creatures:
+            if item.is_alive:
+                count += 1
+        return count
+
+
+if __name__ == "__main__":
+    forest = EnchantedForest("Чорний Ліс", capacity=5)
+
+    molfar = Molfar("Юрій", magic_level=8, health=90, element="вогонь", spells=3)
+    rusalka = Rusalka("Калина", magic_level=6, health=100, river="Дніпро", charm_power=5)
+    perelesnyk = Perelesnyk("Іскра", magic_level=7, health=85, speed=95, form="вогняна куля")
+
+    forest.add_creature(molfar)
+    forest.add_creature(rusalka)
+    forest.add_creature(perelesnyk)
+
+    print(forest.most_powerful())
+    print(forest.attack_intruder("мисливець"))
+
+    molfar.take_damage(90)
+    print(molfar.is_alive)
+
+    print(forest.census())
