@@ -8,6 +8,8 @@
    ```
 """
 # coding here
+with open("hello.txt", "w", encoding="utf-8") as f:
+    f.write("Hello, Python!\n")
 
 """
 2. **Читання файлу**
