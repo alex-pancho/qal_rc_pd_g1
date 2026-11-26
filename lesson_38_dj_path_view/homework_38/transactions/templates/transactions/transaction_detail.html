@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Деталі транзакції #{{ transaction.id }}</title>
+</head>
+<body>
+    <h1>Транзакція #{{ transaction.id }}</h1>
+    <ul>
+        <li><strong>Дата:</strong> {{ transaction.date }}</li>
+        <li><strong>Категорія:</strong> {{ transaction.category }}</li>
+        <li><strong>Тип:</strong> {{ transaction.type }}</li>
+        <li><strong>Сума:</strong> {{ transaction.amount }} грн</li>
+        <li><strong>Опис:</strong> {{ transaction.description }}</li>
+    </ul>
+    <a href="{% url 'transactions_list' %}">До списку транзакцій</a> |
+    <a href="{% url 'home' %}">На головну</a>
+</body>
+</html>
+python manage.py runserver
