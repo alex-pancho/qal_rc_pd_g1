@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .balance { font-size: 24px; color: green; }
+        .expense { color: red; }
+        .income { color: green; }
+    </style>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <h2>Ваш баланс</h2>
+    <p class="income">Доходи: {{ total_income }} грн</p>
+    <p class="expense">Витрати: {{ total_expense }} грн</p>
+    <p class="balance">Баланс: {{ balance }} грн</p>
+    <nav>
+        <a href="{% url 'transactions_list' %}">Усі транзакції</a> |
+        <a href="{% url 'income_list' %}">Доходи</a> |
+        <a href="{% url 'expense_list' %}">Витрати</a> |
+        <a href="{% url 'budgets_list' %}">Бюджети</a>
+    </nav>
+</body>
+</html>
